@@ -1,23 +1,29 @@
-<html>
-  <body>
-    <script type='text/javascript'>
-    	function initEmbeddedMessaging() {
-    		try {
-    			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-    
-    			embeddedservice_bootstrap.init(
-    				'00D780000008iUs',
-    				'MIAW_Web_Test',
-    				'https://pearsonvirtualschools--int.sandbox.my.site.com/ESWMIAWWebTest1730826957343',
-    				{
-    					scrt2URL: 'https://pearsonvirtualschools--int.sandbox.my.salesforce-scrt.com'
-    				}
-    			);
-    		} catch (err) {
-    			console.error('Error loading Embedded Messaging: ', err);
-    		}
-    	};
-  </script>
-  <script type='text/javascript' src='https://pearsonvirtualschools--int.sandbox.my.site.com/ESWMIAWWebTest1730826957343/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-  </body>
+<!DOCTYPE HTML>
+<html lang="en" class="no-js">
+	<body>
+		<script type="text/javascript" src="https://service.force.com/embeddedservice/5.0/esw.min.js"></script>
+		<script type="text/javascript">
+			window.sfChatSnapIn = window.sfChatSnapIn || {};
+			sfChatSnapIn.componentSettings = JSON.parse('{\x22isPCx\x22:true,\x22isPOA\x22:false,\x22delayLoading\x22:false,\x22schoolLookUpByZipEnabled\x22:false}');
+			var blockSchoolId = '';
+		</script>
+		<script type='text/javascript'>
+			function initEmbeddedMessaging() {
+				try {
+					embeddedservice_bootstrap.settings.language = 'en_US'; 
+					embeddedservice_bootstrap.init(
+						'00D780000008iUs',
+						'MIAW_Web_Test',
+						'https://pearsonvirtualschools--int.sandbox.my.site.com/ESWMIAWWebTest1730826957343',
+						{
+							scrt2URL: 'https://pearsonvirtualschools--int.sandbox.my.salesforce-scrt.com'
+						}
+					);
+				} catch (err) {
+					console.error('Error loading Embedded Messaging: ', err);
+				}
+			};
+		</script>
+		<script type='text/javascript' src='https://pearsonvirtualschools--int.sandbox.my.site.com/ESWMIAWWebTest1730826957343/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>    
+    </body>
 </html>
